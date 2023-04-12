@@ -37,4 +37,5 @@
    Flight::route('DELETE /api/cars/@id', function($id){
      Flight::carService()->delete_car($id);
    });
+   
 ?>

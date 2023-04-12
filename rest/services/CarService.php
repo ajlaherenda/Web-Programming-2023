@@ -1,4 +1,7 @@
 <?php
+
+namespace Services;
+
 require_once 'BaseService.php';
 require_once __DIR__ . "/../dao/CarDao.class.php";
 
@@ -7,44 +10,38 @@ class CarService extends BaseService
 {
     public function __construct()
     {
-        parent::__construct(new CarDao);
+        parent::__construct(new CarDao());
     }
-
-    function get_cars_by_id($id)
+    public function getCarsById($id)
     {
-        return $this->dao->get_cars_by_id($id);
+        return $this->dao->getCarsById($id);
     }
-
-    function get_cars_by_location($id)
+    public function getCarsByLocation($id)
     {
-        return $this->dao->get_cars_by_location($id);
-    } 
-
-    function get_cars_search_tool($entity)
+        return $this->dao->getCarsByLocation($id);
+    }
+    public function getCarsSearchTool($entity)
     {
-        return $this->dao->get_cars_search_tool($entity);
+        return $this->dao->getCarsSearchTool($entity);
     }
 
-    function get_cars_based_on_ad_status($ad_status)
+    public function getCarsBasedOnAdStatus($ad_status)
     {
-        return $this->dao->get_cars_based_on_ad_status($ad_status);
+        return $this->dao->getCarsBasedOnAdStatus($ad_status);
     }
 
-    function add_car($entity)
+    public function addCar($entity)
     {
-        return $this->dao->add_car($entity);
+        return $this->dao->addCar($entity);
     }
 
-    function update_car($id, $entity) {
-
-        return this->dao->update_car($id, $entity);
-    }
-
-    function delete_car($id)
+    public function updateCar($id, $entity)
     {
-        return $this->dao->delete_car($id);
+        return this->dao->updateCar($id, $entity);
     }
 
-
+    public function deleteCar($id)
+    {
+        return $this->dao->deleteCar($id);
+    }
 }
-?>
