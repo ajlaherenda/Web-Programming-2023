@@ -1,4 +1,7 @@
 <?php
+
+namespace Services;
+
 class BaseService
 {
     protected $dao;
@@ -10,15 +13,15 @@ class BaseService
     }
 
 
-    public function get_all()
+    public function getAall()
     {
-        return $this->dao->get_all();
+        return $this->dao->getAall();
     }
 
 
-    public function get_by_id($id)
+    public function getById($id)
     {
-        return $this->dao->get_by_id($id);
+        return $this->dao->getById($id);
     }
 
 
@@ -39,5 +42,3 @@ class BaseService
         return $this->dao->delete($id);
     }
 }
-?>
-
