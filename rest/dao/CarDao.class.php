@@ -9,14 +9,14 @@ class CarDao extends BaseDao{
     parent::__construct("cars");
   }
 
-  public function get_cars_by_id($id){
+  public function getCarsById($id){
     $stmt = $this->conn->prepare("SELECT * FROM cars WHERE car_id = :id");
     $stmt->execute(['id' => $id]);
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return reset($result);
   }
 
-  public function get_cars_by_location($id){
+  public function getCarsByLocation($id){
     $stmt = $this->conn->prepare("SELECT * FROM cars WHERE location_fk = :id");
     $stmt->execute(['id' => $id]);
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -24,12 +24,12 @@ class CarDao extends BaseDao{
   }
 
   // fja jedna za onu trazilicu koju cemo imati
-  public function get_cars_search_tool() {
+  public function getCarsSearchTool() {
 
   }
 
   // fja za vozila na saleu/incoming/reserved/available 
-  public function get_cars_based_on_ad_status($ad_status){
+  public function getCarsBasedOnAdStatus($ad_status){
     $stmt = $this->conn->prepare(
     "SELECT *
     FROM cars c
@@ -43,7 +43,7 @@ class CarDao extends BaseDao{
   /*
    * we use this function to add a car with its basic specification
    */
-  public function add_car($entity){
+  public function addCar($entity){
     $query = "INSERT INTO ".$this->table_name." (";
     foreach ($entity as $column => $value) {
       $query .= $column.", ";
@@ -65,7 +65,7 @@ class CarDao extends BaseDao{
   /*
    * we create an add for the car ?? ne treba ovo ovdje
    */
-  public function add_car_ad($entity){
+  public function addCarAd($entity){
     $query = "INSERT INTO ".$this->table_name." (";
     foreach ($entity as $column => $value) {
       $query .= $column.", ";
@@ -89,7 +89,7 @@ class CarDao extends BaseDao{
    * particularly the car_spec_fk and car_ad_fk
    */
 
-  public function update_car($id, $entity, $id_column = "car_id"){
+  public function updateCar($id, $entity, $id_column = "car_id"){
     $query = "UPDATE ".$this->table_name." SET ";
     foreach($entity as $name => $value){
       $query .= $name ."= :". $name. ", ";
@@ -103,7 +103,7 @@ class CarDao extends BaseDao{
     return $entity;
   }
 
-  public function delete_car($id){
+  public function deleteCar($id){
     $stmt = $this->conn->prepare("DELETE FROM ".$this->table_name." WHERE car_id=:id");
     $stmt->bindParam(':id', $id); // SQL injection prevention
     $stmt->execute();

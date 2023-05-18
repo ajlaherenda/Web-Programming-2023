@@ -1,7 +1,5 @@
 <?php
 
-namespace Services;
-
 class BaseService
 {
     protected $dao;
@@ -13,9 +11,9 @@ class BaseService
     }
 
 
-    public function getAall()
+    public function getAll()
     {
-        return $this->dao->getAall();
+        return $this->dao->getAll();
     }
 
 

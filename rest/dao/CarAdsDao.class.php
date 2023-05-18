@@ -13,7 +13,7 @@ class CarAdsDao extends BaseDao{
    /*
    * after adding a car we will add its more detailed specs to the database
    */
-  public function add_car_ad($entity){
+  public function addCarAd($entity){
     $query = "INSERT INTO ".$this->table_name." (";
     foreach ($entity as $column => $value) {
       $query .= $column.", ";
@@ -32,7 +32,7 @@ class CarAdsDao extends BaseDao{
     return $entity['ad_id'];
   }
 
-  public function update_car_ad($id, $entity, $id_column = "ad_id"){
+  public function updateCarAd($id, $entity, $id_column = "ad_id"){
     $query = "UPDATE ".$this->table_name." SET ";
     foreach($entity as $name => $value){
       $query .= $name ."= :". $name. ", ";
@@ -46,7 +46,7 @@ class CarAdsDao extends BaseDao{
     return $entity;
   }
 
-  public function delete_car_ad($id){
+  public function deleteCarAd($id){
     $stmt = $this->conn->prepare("DELETE FROM ".$this->table_name." WHERE ad_id=:id");
     $stmt->bindParam(':id', $id); // SQL injection prevention
     $stmt->execute();
