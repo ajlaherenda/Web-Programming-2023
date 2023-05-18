@@ -26,7 +26,7 @@ class BaseDao{
   /**
   * Method used to read all todo objects from database
   */
-  public function get_all(){
+  public function getAll(){
     $stmt = $this->conn->prepare("SELECT * FROM ".$this->table_name);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);

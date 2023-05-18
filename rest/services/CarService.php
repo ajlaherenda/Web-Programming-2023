@@ -1,6 +1,5 @@
 <?php
 
-namespace Services;
 
 require_once 'BaseService.php';
 require_once __DIR__ . "/../dao/CarDao.class.php";
@@ -43,5 +42,9 @@ class CarService extends BaseService
     public function deleteCar($id)
     {
         return $this->dao->deleteCar($id);
+    }
+    public function getAll()
+    {
+        return $this->dao->getAll();
     }
 }

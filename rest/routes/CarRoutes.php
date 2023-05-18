@@ -6,36 +6,36 @@
 
 
    Flight::route('GET /api/cars', function(){
-      Flight::json(Flight::carService()->get_all());
+      Flight::json(Flight::carService()->getAll());
    });
 
 
    Flight::route('GET /api/cars/@id', function($id){
-      Flight::json(Flight::carService()->get_cars_by_id($id));
+      Flight::json(Flight::carService()->getCarsById($id));
    });
 
    Flight::route('GET /api/cars/location/@id', function($id){
-      Flight::json(Flight::carService()->get_cars_by_location($id));
+      Flight::json(Flight::carService()->getCarsByLocation($id));
    });
 
-   Flight::route('GET /api/cars/sale/@ad_status', function($ad_status){
-      Flight::json(Flight::carService()->get_cars_based_on_ad_status($ad_status));
+   Flight::route('GET /api/cars/availability/@ad_status', function($ad_status){
+      Flight::json(Flight::carService()->getCarsBasedOnAdStatus($ad_status));
    });
 
    Flight::route('POST /api/cars', function(){
       $data = Flight::request()->data->getData();
-      Flight::json(Flight::carService()->add_car($data));
+      Flight::json(Flight::carService()->addCar($data));
    });
 
    Flight::route('PUT /api/cars/@id', function($id){
       $data = Flight::request()->data->getData();
-      Flight::carService()->update_car($id, $data);
+      Flight::carService()->updateCar($id, $data);
 
-   Flight::json(Flight::carService()->get_cars_by_id($id));
+   Flight::json(Flight::carService()->getCarsById($id));
    });
 
    Flight::route('DELETE /api/cars/@id', function($id){
-     Flight::carService()->delete_car($id);
+     Flight::carService()->deleteCar($id);
    });
    
 ?>

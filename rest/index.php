@@ -13,7 +13,7 @@ require_once __DIR__ . '/routes/CarSpecsRoutes.php';
 
 Flight::register('carService', "CarService");
 
-Flight::register('carSpecsServiceo', "CarSpecsService");
+Flight::register('carSpecsService', "CarSpecsService");
 
 Flight::register('carAdsService', "CarAdsService");
 
