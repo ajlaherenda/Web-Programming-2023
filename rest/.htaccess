@@ -1,6 +1,6 @@
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-Require all granted
+Allow from All
 RewriteRule ^(.*)$ index.php [QSA,L] */
 
