@@ -4,7 +4,6 @@ WHAT WORKS
 - Routes (GET/POST/DEL) which have been implemented, alongside the according DAO layer
 
 Available at:
-https://web-programming-2023-production-71ae.up.railway.app/
 
 
 
