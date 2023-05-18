@@ -9,6 +9,10 @@ In this (Initial) release, support is provided for the below:
 
 Available at:
 
+https://car-dealership-jnny.onrender.com/
+
+- deployment is fine, but due to the DB being local it does not work 
+- solution => proceed with the deployment to a Personal VPS
 
 
  + PSR 12 creates a problem => due to namespace
