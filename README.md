@@ -9,12 +9,12 @@ In this (Initial) release, support is provided for the below:
 
 Available at:
 
-    - https://car-dealership-jnny.onrender.com/
+     https://car-dealership-jnny.onrender.com/
 
-Working routes:
-    - https://car-dealership-jnny.onrender.com/rest/api/cars
-    - https://car-dealership-jnny.onrender.com/rest/api/cars/1 or for any ID#
-    - https://car-dealership-jnny.onrender.com/rest/api/cars/availability/SALE or instead of sale we can put RESERVED or INCOMING
++ Working routes:
+    + https://car-dealership-jnny.onrender.com/rest/api/cars
+    + https://car-dealership-jnny.onrender.com/rest/api/cars/1 or for any ID#
+    + https://car-dealership-jnny.onrender.com/rest/api/cars/availability/SALE or instead of sale we can put RESERVED or INCOMING
 
 
  + PSR 12 creates a problem => due to namespace
