@@ -91,6 +91,12 @@ class BaseDao{
     $results = $this->query($query, $params);
     return reset($results);
   }
+  //method for query
+  public function queryWithoutParams($query){
+    $stmt = $this->conn->prepare($query);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
 
 }
 

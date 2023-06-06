@@ -27,17 +27,17 @@ class CarDao extends BaseDao{
   public function getCarsSearchTool() {
 
   }
-
+  
   // fja za vozila na saleu/incoming/reserved/available 
   public function getCarsBasedOnAdStatus($ad_status){
     $stmt = $this->conn->prepare(
-    "SELECT *
+    "SELECT c.car_id, c.brand, c.model, c.price, c.pdv_price, c.year, ca.title, ca.imaging_path, ca.description,  c.transmission, c.engine_power, c.mileage
     FROM cars c
     JOIN car_ads ca ON c.car_ad_fk = ca.ad_id 
     WHERE ca.status = :ad_status");
     $stmt->execute(['ad_status' => $ad_status]);
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    return reset($result);
+    return $result;
   }
   
   /*
@@ -109,9 +109,11 @@ class CarDao extends BaseDao{
     $stmt->execute();
   }
 
-
-  
-
+  public function searchTool($entity) {
+    
+    $param = "%" . $entity . "%";
+    return $this->queryWithoutParams("SELECT  c.brand, c.model, c.price, c.pdv_price, c.year, ca.title, ca.imaging_path, ca.description,  c.transmission, c.engine_power, c.mileage FROM cars c  JOIN car_ads ca ON ca.ad_id=c.car_ad_fk WHERE lower(ca.title) LIKE '". $param ."';");
+    }
 }
 
 

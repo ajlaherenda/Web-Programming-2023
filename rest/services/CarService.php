@@ -47,4 +47,16 @@ class CarService extends BaseService
     {
         return $this->dao->getAll();
     }
+    public function queryWithoutParams($entity)
+    {
+        return $this->dao->queryWithoutParams($entity);
+    }
+    public function getBrands($entity)
+    {
+        return $this->dao->queryWithoutParams($entity);
+    }
+    public function searchTool($entity)
+    {
+        return $this->dao->searchTool($entity);
+    }
 }

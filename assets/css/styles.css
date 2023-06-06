@@ -1,0 +1,104 @@
+    p {
+      font: "Times New Roman", Times, serif;
+    }
+
+    /* Add custom CSS if needed */
+    .sidebar {
+      padding: 20px;
+      background-image: #e9e9eb;
+      margin: 0;
+      width: 350px;
+      position: fixed;
+      height: 100%;
+      overflow: auto;
+    }
+
+    body {
+      background-image: url('../images/pocetna.png');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+    }
+
+    #aboutUs {
+      background-image: url('../images/aboutus.png');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+
+      position: absolute;
+      padding: 0;
+      margin: 0;
+      top: 0;
+      left: 0;
+      width: 92vw;
+      height: 100vh;
+    }
+
+    #bottom-nav {
+      background-color: rgb(174, 6, 14);
+      font-style: italic;
+    }
+
+    #slogan {
+      font: serif;
+      font-style: italic;
+    }
+
+    #container-test-drive {
+      background-color: gainsboro;
+      background-image: url("../images/putic.png");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+      position: absolute;
+      padding: 0;
+      margin: 0;
+      top: 0;
+      left: 0;
+      min-width: 49%;
+      width: fit-content;
+      height: fit-content;
+
+    }
+
+    #test-drive-form {
+      padding: 75px;
+      margin: 50px;
+      top: 75px;
+      left: 75px;
+      width: 500px;
+    }
+    
+    /* Style buttons */
+    #admin-trash {
+      background-color: rgb(150, 6, 14); /* Red background */
+      border: none; /* Remove borders */
+      color: white; /* White text */
+      padding: 7px 11px; /* Some padding */
+      font-size: 16px; /* Set a font size */
+      cursor: pointer; /* Mouse pointer on hover */
+    }
+
+    /* Darker background on mouse-over */
+    #admin-trash:hover {
+      background-color: rgb(174, 6, 14);
+    }
+
+    #admin-db {
+      background-color: rgb(135,206,250); /* Blue background */
+      border: none; /* Remove borders */
+      color: white; /* White text */
+      padding: 7px 11px; /* Some padding */
+      font-size: 16px; /* Set a font size */
+      cursor: pointer; /* Mouse pointer on hover */
+    }
+
+    #admin-db:hover {
+      background-color: rgb(30,144,255);
+    }
+
+    #modal-year {
+      text-align: right;
+    }
+ 

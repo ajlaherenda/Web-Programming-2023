@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT Car</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link type="text/css" rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+  <nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: #f1f1f1;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"> <em>ITcar</em></a>
+      <img src="assets/images/logo.png" alt="" width="80" height="80" class="d-inline-block align-text-top"> </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <button class="btn" style="box-shadow: none; outline: none;" onclick="SinglePageService.showAboutUs()"
+              outline-none class="nav-link"">About us</button>
+              </li>
+              <li class=" nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Buy a vehicle
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><button class="btn" style="box-shadow: none; outline: none;"
+                    onclick="CarService.showAvailableCars();SinglePageService.showAvailableCarsUI();">Available
+                    Vehicles</button></li>
+                <li><button class="dropdown-item"
+                    onclick="CarService.showIncomingCars();SinglePageService.showIncomingCarsUI();">Incoming
+                    Vehicles</button></li>
+                <li><button class="dropdown-item"
+                    onclick="CarService.showSaleCars();SinglePageService.showSaleCarsUI();">Vehicles on SALE</button>
+                </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><button class="dropdown-item" onclick="SinglePageService.showTestDriveUI();">Book a test
+                    drive</button></li>
+              </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Login</a>
+          </li>
+        </ul>
+        <span class="mx-auto" id="slogan">
+          <marquee>We Open New Doors For You..</marquee>
+        </span>
+        <div class="d-flex" id="search">
+          <input class="form-control me-2" id="searchInput" type="search" placeholder="Fast search" aria-label="Search"
+            required>
+          <button class="btn btn-outline-secondary" type="button"
+            onclick="CarService.searchForCars();SinglePageService.showSearchResults();">Find</button>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+  <div class="container d-none " id="aboutUs">
+  </div>
+  <div class="container" id="container-home">
+    <div class="row gy-3" id="carCardsHome">
+    </div>
+  </div>
+
+  <div class="container d-none" id="container-available">
+    <div class="row gy-3" id="carCardsAvailable">
+    </div>
+  </div>
+
+  <div class="container d-none" id="container-incoming">
+    <div class="row gy-3" id="carCardsIncoming">
+    </div>
+  </div>
+
+  <div class="container d-none" id="container-sale">
+    <div class="row gy-3" id="carCardsSale">
+    </div>
+  </div>
+
+  <div class="container d-none" id="container-search-results">
+    <div class="row gy-3" id="carCardsSearched">
+    </div>
+  </div>
+
+  </div>
+  <div class="container d-none" id="container-test-drive">
+    <form id="test-drive-form">
+      <div class="form-group">
+        <br>
+        <input type="name" class="form-control" id="test-drive-name" placeholder="Your name">
+      </div>
+      <div class="form-group">
+        <br>
+        <input type="surname" class="form-control" id="test-drive-surname" placeholder="Your surname">
+      </div>
+      <div class="form-group">
+        <br>
+        <input type="phone" class="form-control" id="test-drive-phone" placeholder="Your phone number">
+      </div>
+      <div class="form-group">
+        <br>
+        <input type="email" class="form-control" id="test-drive-phone" placeholder="Email address">
+      </div>
+
+      <div class="form-group">
+        <br>
+        <select class="form-control" id="test-drive-vehicle">
+          <option id="vehicle-options">Choose your test vehicle</option>
+          <option id="test-vehicle-options">opcije is ajaxa</option>
+        </select>
+      </div>
+      <br>
+      <label for="date">What day would you like to do your test drive?</label>
+      <br>
+      <br>
+      <input type="date" id="date" name="date">
+      <br>
+      <br>
+      <p>What period of the day would you like your test drive to happen?</p>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="am" value="AM">
+        <label class="form-check-label" for="am">AM</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="pm" value="PM">
+        <label class="form-check-label" for="pm">PM</label>
+      </div>
+      <button type="submit" onsubmit="UtilityService.playAudio()" class="btn btn-outline-secondary">Book your test
+        drive</button>
+    </form>
+  </div>
+  <footer id="bottom-nav">
+    <nav class="navbar navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">ITcar Dealership</a>
+        <div class="contact-info">
+          <span><i class="fa fa-phone"></i> Phone: +387 63 666 981</span>
+          <span><i class="fa fa-envelope"></i> Email: info@itcar.business.com</span>
+          <span><i class="fa fa-map-marker"></i> Address: Osik 2, Sarajevo 71000</span>
+        </div>
+        <div class="hours">
+          <span><strong>Hours of Operation:</strong> Monday - Friday: 9am - 6pm</span>
+        </div>
+      </div>
+    </nav>
+  </footer>
+
+</body>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/CarService.js"></script>
+<script src="js/SinglePageService.js"></script>
+<script src="js/UtilityService.js"></script>
+
+<script>CarService.getCarsHome()</script>
+
+</html>
