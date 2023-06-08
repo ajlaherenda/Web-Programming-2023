@@ -1,1 +1,4 @@
 vendor
+node_modules
+Config.class.php
+.DS_Store

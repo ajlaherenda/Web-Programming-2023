@@ -1,9 +1,7 @@
 <?php
 
-
 require_once 'BaseService.php';
 require_once __DIR__ . "/../dao/CarDao.class.php";
-
 
 class CarService extends BaseService
 {
@@ -11,14 +9,17 @@ class CarService extends BaseService
     {
         parent::__construct(new CarDao());
     }
+
     public function getCarsById($id)
     {
         return $this->dao->getCarsById($id);
     }
+
     public function getCarsByLocation($id)
     {
         return $this->dao->getCarsByLocation($id);
     }
+
     public function getCarsSearchTool($entity)
     {
         return $this->dao->getCarsSearchTool($entity);
@@ -43,18 +44,22 @@ class CarService extends BaseService
     {
         return $this->dao->deleteCar($id);
     }
+
     public function getAll()
     {
         return $this->dao->getAll();
     }
+
     public function queryWithoutParams($entity)
     {
         return $this->dao->queryWithoutParams($entity);
     }
+
     public function getBrands($entity)
     {
         return $this->dao->queryWithoutParams($entity);
     }
+
     public function searchTool($entity)
     {
         return $this->dao->searchTool($entity);

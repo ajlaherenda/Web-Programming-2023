@@ -52,9 +52,9 @@
       background-attachment: fixed;
       background-size: 100% 100%;
       position: absolute;
-      padding: 0;
+      padding: 75px;
       margin: 0;
-      top: 0;
+      top: 75px;
       left: 0;
       min-width: 49%;
       width: fit-content;
@@ -100,5 +100,27 @@
 
     #modal-year {
       text-align: right;
+    }
+    #container-admin-login {
+      background-color: gainsboro;
+      background-image: url("../images/login.png");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 45% 100%;
+      position: absolute;
+      padding: 75px;
+      margin: 0;
+      top: 75px;
+      left: 0;
+      min-width: 49%;
+      min-height: 69%;
+      width: fit-content;
+      height: fit-content;
+    }
+    #login-form {
+      margin: 75px;
+      top: 100px;
+      left: 100px;
+      right: 100px;
     }
  
