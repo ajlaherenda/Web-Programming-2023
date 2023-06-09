@@ -41,4 +41,9 @@ class TestDriveDao extends BaseDao
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return reset($result);
     }
+    // methods for Unit testing
+    public function getTableName()
+    {
+        return $this->table_name;
+    }
 }

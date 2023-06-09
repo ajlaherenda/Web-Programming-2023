@@ -33,7 +33,6 @@ class CarAdsDao extends BaseDao
         $entity['ad_id'] = $this->conn->lastInsertId();
         return $entity['ad_id'];
     }
-
     /*
     public function updateCarAd($id, $entity, $id_column = "ad_id")
     {
@@ -49,7 +48,6 @@ class CarAdsDao extends BaseDao
         $stmt->execute($entity);
         return $entity;
     } */
-
     public function updateCarAd($data)
     {
         $button = $data['button'];
@@ -85,11 +83,14 @@ class CarAdsDao extends BaseDao
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
     }
-
-
     public function deleteCarAd($data)
     {
         $id = $data['id'];
         return $this->queryWithoutParams("DELETE ca, c FROM cars c JOIN car_ads ca ON ca.ad_id=c.car_ad_fk WHERE c.car_id=$id");
+    }
+    // methods for Unit testing
+    public function getTableName()
+    {
+        return $this->table_name;
     }
 }

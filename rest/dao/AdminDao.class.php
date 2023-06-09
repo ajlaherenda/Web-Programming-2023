@@ -11,7 +11,6 @@ class AdminDao extends BaseDao
     {
         parent::__construct("admins");
     }
-
     public function getAdminByUsername($username)
     {
         $stmt = $this->conn->prepare("SELECT * FROM admins WHERE username = :username");
@@ -19,9 +18,9 @@ class AdminDao extends BaseDao
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return reset($result);
     }
-
-    public function getUserByToken($token)
+    // methods for Unit testing
+    public function getTableName()
     {
-        return $this->queryUnique("SELECT * FROM users WHERE token = :token", ["token" => $token]);
+        return $this->table_name;
     }
 }
