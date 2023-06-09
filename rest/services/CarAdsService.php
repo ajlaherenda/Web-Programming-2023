@@ -20,11 +20,19 @@ class CarAdsService extends BaseService
 
     public function updateCarAd($data)
     {
-        return $this->dao->updateCarAd($data);
+        $id = $data['car_id'];
+        $button = $data['button'];
+        $car = Flight::carService()->getCarsById($id);
+        if (isset($car['car_id']) && $button < 5) {
+            return $this->dao->updateCarAd($data);
+        } else {
+            return Flight::json(['message' => "Parameters are incorrect!"], 400);
+        }
     }
 
     public function deleteCarAd($data)
     {
+        $id = $data['id'];
         return $this->dao->deleteCarAd($data);
     }
 }

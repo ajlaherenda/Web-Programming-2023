@@ -12,7 +12,7 @@ class Config
     }
     public static function DB_PASSWORD()
     {
-        return Config::get_env("DB_PASSWORD", "");
+        return Config::get_env("DB_PASSWORD", "sifrazabazu2023");
     }
     public static function DB_SCHEME()
     {

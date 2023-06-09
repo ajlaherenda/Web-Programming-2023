@@ -39,7 +39,11 @@
 
 Flight::route('PUT /ads/update', function () {
     $data = Flight::request()->data->getData();
-    Flight::json(Flight::carAdsService()->updateCarAd($data));
+    if (is_int($data['car_id']) && is_int($data['button'])) {
+        Flight::json(Flight::carAdsService()->updateCarAd($data));
+    } else {
+        return Flight::json(['message' => 'Invalid input values!'], 400);
+    }
 });
 
 /**
@@ -77,5 +81,9 @@ Flight::route('PUT /ads/update', function () {
 
 Flight::route('DELETE /ads/del', function () {
     $data = Flight::request()->data->getData();
-    Flight::json(Flight::carAdsService()->deleteCarAd($data));
+    if (is_int($data['id'])) {
+        Flight::json(Flight::carAdsService()->deleteCarAd($data));
+    } else {
+        return Flight::json(['message' => 'Invalid input value!'], 400);
+    }
 });
