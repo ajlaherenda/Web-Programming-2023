@@ -1,16 +1,16 @@
 # Web-Programming-2023
 
-+ WEB tasks:
-+ Open API za rute koje su ostale a nisi ih koristila + response promijeni na svakom!
+Deployment link =>
 
-+ deployment za oba -> digital ocean ili ostaviti na renderu ali secret file setupovati kako treba
-
-
-+ SE tasks:
- + 3 testa bar Selenium
- + bar 2 releasa znaci jedan prije promjena za SE i jedan nakon promjena jos 
- + jos jedan design pattern => factory method imas + recimo oni predlozeni
+Project description:
 
 
- git reset --hard
- sve ce ti se vratiti
+Coding standards:
+PHP PSR 12 
+JavaScript Airbnb style
+HTML 5
+MySQL DB
+
+The project makes use of 2 design patterns:
++ Factory method, utilised in the creation of DAO, in order to prevent code repetition and inrease operational efficiency, by utilising resources instatiated once and used throughout the entire project. Found in the dao folder.
++ Chain of responsibility, utilised in the frontend->backend request and parameter forwarding, as a security layer achieved by data validations and routing middleware. Found in routes of type POST and services called by the aforementioned, as well as DAOs.
