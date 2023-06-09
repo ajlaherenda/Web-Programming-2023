@@ -1,6 +1,13 @@
 <?php
 
 /**
+ * @OA\Tag(
+ *     name="car ads",
+ *     description="Car ads related operations."
+ * )
+**/
+
+/**
  * @OA\Post(
  *     path="/ads/update",
  *     summary="Updates the car ad status - with the supplied example.",
@@ -24,17 +31,10 @@
  *             )
  *     ),
  *     @OA\Response(
- *         response=200,
- *         description="OK",
- *         @OA\JsonContent(
- *             oneOf={
- *                 @OA\Schema(type="boolean")
- *             },
- *             @OA\Examples(example="result", value={"success": true}, summary="An result object."),
- *             @OA\Examples(example="bool", value=false, summary="A boolean value."),
- *         )
- *     )
- * )
+ *              response="200",
+ *              description="Car ad status has been updated!"
+ *      )
+ *  )
  */
 
 Flight::route('PUT /ads/update', function () {
@@ -66,17 +66,10 @@ Flight::route('PUT /ads/update', function () {
  *         )
  *     ),
  *     @OA\Response(
- *         response=200,
- *         description="OK",
- *         @OA\JsonContent(
- *             oneOf={
- *                 @OA\Schema(type="boolean")
- *             },
- *             @OA\Examples(example="result", value={"success": true}, summary="An result object."),
- *             @OA\Examples(example="bool", value=false, summary="A boolean value."),
- *         )
- *     )
- * )
+ *              response="200",
+ *              description="Car ad has been deleted."
+ *      )
+ *  )
  */
 
 Flight::route('DELETE /ads/del', function () {

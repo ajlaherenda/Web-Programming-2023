@@ -62,6 +62,11 @@ class CarService extends BaseService
 
     public function searchTool($entity)
     {
-        return $this->dao->searchTool($entity);
+        $car = $this->dao->searchTool($entity);
+        if ($car != false) {
+            return $car;
+        } else {
+            return 0;
+        }
     }
 }

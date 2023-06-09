@@ -7,12 +7,16 @@ var BookingService = {
       contentType: "application/json",
       dataType: "json",
       success: function (result) {
+        if (Number.isInteger(result)) {
+          alert("The vehicle has been reserved for that time and/or date. Try changing them!");
+        } else {
         //let audio = new Audio('brm.mp3');
         //audio.play();
         //const audioContainer = document.getElementById("audioContainer");
         //audioContainer.play();
         alert("Test drive booked successfully!");
         window.location.replace("index.html");
+        }
       },
       error: function (XMLHttpRequest, textStatus, errorThrown) {
         toastr.error(JSON.stringify(errorThrown, Object.getOwnPropertyNames(errorThrown)));

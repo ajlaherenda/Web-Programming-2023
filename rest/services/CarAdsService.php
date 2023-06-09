@@ -33,6 +33,11 @@ class CarAdsService extends BaseService
     public function deleteCarAd($data)
     {
         $id = $data['id'];
-        return $this->dao->deleteCarAd($data);
+        $car = Flight::carService()->getCarsById($id);
+        if (isset($car['car_id'])) {
+            return $this->dao->deleteCarAd($data);
+        } else {
+            return Flight::json(['message' => 'Vehicle ID invalid.'], 400);
+        }
     }
 }

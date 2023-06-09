@@ -49,20 +49,19 @@ class OpenApiSpec
  *         )
  *     ),
  *     @OA\Response(
- *         response=200,
- *         description="OK",
- *         @OA\JsonContent(
- *             oneOf={
- *                 @OA\Schema(type="boolean")
- *             },
- *             @OA\Examples(example="result", value={"success": true}, summary="An result object."),
- *             @OA\Examples(example="bool", value=false, summary="A boolean value."),
- *         )
+ *         response="200",
+ *         description="Successfull retrieval of admin."
  *     )
  * )
  */
 
 Flight::route('POST /login', function () {
     $data = Flight::request()->data->getData();
-    return Flight::adminService()->login($data);
+    $username = $data['username'];
+    $password = $data['password'];
+    if (is_string($username) && is_string($password)) {
+        return Flight::adminService()->login($data);
+    } else {
+        return Flight::json(['message' => "Invalid parameter types."], 400);
+    }
 });

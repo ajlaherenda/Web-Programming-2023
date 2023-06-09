@@ -50,18 +50,12 @@
  *                 example = {"name" : "Ajla", "surname" : "Herenda", "phone" : "+387666666", "email" : "ajla.herenda@stu.ibu.edu.ba", "vehicle" : "Audi A5 S0635838", "date" : "12.12.2023.", "time" : "AM"}
  *             )
  *     ),
+ *
  *     @OA\Response(
- *         response=200,
- *         description="OK",
- *         @OA\JsonContent(
- *             oneOf={
- *                 @OA\Schema(type="boolean")
- *             },
- *             @OA\Examples(example="result", value={"success": true}, summary="An result object."),
- *             @OA\Examples(example="bool", value=false, summary="A boolean value."),
- *         )
- *     )
- * )
+ *          response="200",
+ *          description="Test drive was successfully booked."
+ *      )
+ *  )
  */
 
 Flight::route('POST /booking', function () {

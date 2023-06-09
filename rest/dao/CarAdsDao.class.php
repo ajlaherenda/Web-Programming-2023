@@ -90,7 +90,6 @@ class CarAdsDao extends BaseDao
     public function deleteCarAd($data)
     {
         $id = $data['id'];
-        //$stmt = $this->conn->prepare("DELETE FROM " . $this->table_name . " ca JOIN cars c ON ca.ad_id=c.car_ad_fk WHERE c.car_id=" . $id);
         return $this->queryWithoutParams("DELETE ca, c FROM cars c JOIN car_ads ca ON ca.ad_id=c.car_ad_fk WHERE c.car_id=$id");
     }
 }

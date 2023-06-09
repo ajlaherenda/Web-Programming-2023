@@ -24,7 +24,7 @@ class AdminService extends BaseService
         }
 
         if ($password != $db_user['password']) {
-            throw new Exception("Invalid password", 400);
+            throw new Exception("Invalid credidentials", 400);
         }
         unset($db_user['password']);
         $jwt = JWT::encode($db_user, Config::JWT_SECRET(), 'HS256');

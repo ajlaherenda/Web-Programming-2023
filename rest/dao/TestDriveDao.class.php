@@ -30,4 +30,15 @@ class TestDriveDao extends BaseDao
         $entity['id'] = $this->conn->lastInsertId();
         return $entity;
     }
+    public function checkAvailability($car, $date, $time)
+    {
+        $stmt = $this->conn->prepare(
+            "SELECT * 
+            FROM testdrives
+            WHERE vehicle = :vehicle  AND date= :date AND time = :time;"
+        );
+        $stmt->execute(['vehicle' => $car, 'date' => $date, 'time' => $time]);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return reset($result);
+    }
 }

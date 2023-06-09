@@ -25,7 +25,6 @@ var AdminService = {
         },
         error: function (XMLHttpRequest, textStatus, errorThrown) {
           alert("Given credidentials do NOT match the credidentials of our admin!");
-          // JSON.stringify(errorThrown, Object.getOwnPropertyNames(errorThrown))
         }
     });
   },
