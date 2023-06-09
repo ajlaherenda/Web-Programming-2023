@@ -59,6 +59,6 @@
  */
 
 Flight::route('POST /booking', function () {
-      $data = Flight::request()->data->getData();
-      Flight::json(Flight::testDriveService()->addTestDrive($data));
+    $data = Flight::request()->data->getData();
+    Flight::json(Flight::testDriveService()->addTestDrive($data));
 });

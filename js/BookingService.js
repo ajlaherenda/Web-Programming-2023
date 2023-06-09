@@ -9,13 +9,10 @@ var BookingService = {
       success: function (result) {
         if (Number.isInteger(result)) {
           alert("The vehicle has been reserved for that time and/or date. Try changing them!");
-        } else {
-        //let audio = new Audio('brm.mp3');
-        //audio.play();
-        //const audioContainer = document.getElementById("audioContainer");
-        //audioContainer.play();
-        alert("Test drive booked successfully!");
-        window.location.replace("index.html");
+        } 
+        else {
+          alert("Test drive booked successfully!");
+          window.location.replace("index.html");
         }
       },
       error: function (XMLHttpRequest, textStatus, errorThrown) {
@@ -29,10 +26,12 @@ var BookingService = {
       rules: {
         name: {
           required: true,
+          digits: false,
           minlength: 2
         },
         surname: {
           required: true,
+          digits: false,
           minlength: 2
         },
         email: {
@@ -57,10 +56,12 @@ var BookingService = {
       messages: {
         name: {
           required: "Please enter your name",
+          digits: "Digits are not allowed in name field.",
           minlength: "Name must be at least 2 characters long"
         },
         surname: {
           required: "Please enter your surname",
+          digits: "Digits are not allowed in surname field.",
           minlength: "Surname must be at least 2 characters long"
         },
         email: {
