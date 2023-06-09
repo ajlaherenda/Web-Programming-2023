@@ -33,7 +33,7 @@ class CarDao extends BaseDao
         $stmt = $this->conn->prepare("SELECT * FROM cars WHERE car_id = :id");
         $stmt->execute(['id' => $id]);
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        return reset($result);
+        return $result;
     }
     public function getCarsByLocation($id)
     {
@@ -61,7 +61,6 @@ class CarDao extends BaseDao
         $entity['car_id'] = $this->conn->lastInsertId();
         return $entity;
     }
-
     public function updateCar($id, $entity, $id_column = "car_id")
     {
         $query = "UPDATE " . $this->table_name . " SET ";
@@ -81,5 +80,10 @@ class CarDao extends BaseDao
         $stmt = $this->conn->prepare("DELETE FROM " . $this->table_name . " WHERE car_id=:id");
         $stmt->bindParam(':id', $id); // SQL injection prevention
         $stmt->execute();
+    }
+    // methods for Unit testing
+    public function getTableName()
+    {
+        return $this->table_name;
     }
 }
