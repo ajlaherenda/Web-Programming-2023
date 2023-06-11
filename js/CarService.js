@@ -136,6 +136,8 @@ var CarService = {
                     <li class="list-group-item">Mileage: ` + data[i].mileage + ` km</li>
                     <li class="list-group-item">Engine power: ` + data[i].engine_power + `</li>
                     <li class="list-group-item">Transmission: ` + data[i].transmission + `</li>
+                    <li class="list-group-item">Location: ` + data[i].location_name + `</li>
+
                   </ul>
                   <img style="padding: 13px;" src="`+ data[i].imaging_path + `" class="card-img-top" alt="...">
                   <br>    
@@ -234,6 +236,7 @@ var CarService = {
                       <li class="list-group-item">Mileage: ` + data[i].mileage + ` km</li>
                       <li class="list-group-item">Engine power: ` + data[i].engine_power + `</li>
                       <li class="list-group-item">Transmission: ` + data[i].transmission + `</li>
+                      <li class="list-group-item">Location: ` + data[i].location_name + `</li>
                     </ul>
                     <img style="padding: 13px;" src="`+ data[i].imaging_path + `" class="card-img-top" alt="...">
                     <br>    
@@ -332,6 +335,7 @@ var CarService = {
                       <li class="list-group-item">Mileage: ` + data[i].mileage + ` km</li>
                       <li class="list-group-item">Engine power: ` + data[i].engine_power + `</li>
                       <li class="list-group-item">Transmission: ` + data[i].transmission + `</li>
+                      <li class="list-group-item">Location: ` + data[i].location_name + `</li>
                     </ul>
                     <img style="padding: 13px;" src="`+ data[i].imaging_path + `" class="card-img-top" alt="...">
                     <br>    
@@ -451,6 +455,7 @@ var CarService = {
                           <li class="list-group-item">Mileage: ` + data[i].mileage + ` km</li>
                           <li class="list-group-item">Engine power: ` + data[i].engine_power + `</li>
                           <li class="list-group-item">Transmission: ` + data[i].transmission + `</li>
+                          <li class="list-group-item">Location: ` + data[i].location_name + `</li>
                         </ul>
                         <img style="padding: 13px;" src="`+ data[i].imaging_path + `" class="card-img-top" alt="...">
                         <br>    
