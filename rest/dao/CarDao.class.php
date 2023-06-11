@@ -13,9 +13,10 @@ class CarDao extends BaseDao
     }
     public function getCarsBasedOnAdStatus($ad_status)
     {
-        $stmt = $this->conn->prepare("SELECT c.car_id, c.brand, c.model, c.price, c.pdv_price, c.year, ca.title, ca.imaging_path, ca.description,  c.transmission, c.engine_power, c.mileage, ca.status 
+        $stmt = $this->conn->prepare("SELECT c.car_id, c.brand, c.model, c.price, c.pdv_price, c.year, ca.title, ca.imaging_path, ca.description,  c.transmission, c.engine_power, c.mileage, ca.status, l.location_name
             FROM cars c
-            JOIN car_ads ca ON c.car_ad_fk = ca.ad_id 
+            JOIN car_ads ca ON c.car_ad_fk = ca.ad_id
+            JOIN locations l ON l.location_id=c.location_fk 
             WHERE ca.status = :ad_status");
         $stmt->execute(['ad_status' => $ad_status]);
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -24,8 +25,9 @@ class CarDao extends BaseDao
     public function searchTool($entity)
     {
         $param = "%" . $entity . "%";
-        return $this->queryWithoutParams("SELECT  c.car_id, ca.status, c.brand, c.model, c.price, c.pdv_price, c.year, ca.title, ca.imaging_path, ca.description,  c.transmission, c.engine_power, c.mileage 
-        FROM cars c  JOIN car_ads ca ON ca.ad_id=c.car_ad_fk 
+        return $this->queryWithoutParams("SELECT  c.car_id, ca.status, c.brand, c.model, c.price, c.pdv_price, c.year, ca.title, ca.imaging_path, ca.description,  c.transmission, c.engine_power, c.mileage, l.location_name 
+        FROM cars c  JOIN car_ads ca ON ca.ad_id=c.car_ad_fk
+        JOIN locations l ON l.location_id=c.location_fk 
         WHERE lower(ca.title) LIKE '" . $param . "';");
     }
     public function getCarsById($id)

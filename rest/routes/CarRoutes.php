@@ -18,9 +18,10 @@
 
 Flight::route('GET /cars/home', function () {
     Flight::json(Flight::carService()->queryWithoutParams(
-        "SELECT c.car_id, c.brand, c.model, c.price, c.pdv_price, c.year, ca.title, ca.imaging_path, ca.description,  c.transmission, c.engine_power, c.mileage, ca.status
+        "SELECT c.car_id, c.brand, c.model, c.price, c.pdv_price, c.year, ca.title, ca.imaging_path, ca.description,  c.transmission, c.engine_power, c.mileage, ca.status, l.location_name
          FROM cars c
-         JOIN car_ads ca ON ca.ad_id=c.car_ad_fk;"
+         JOIN car_ads ca ON ca.ad_id=c.car_ad_fk
+         JOIN locations l ON l.location_id=c.location_fk;"
     ));
 });
 
