@@ -36,7 +36,7 @@ Flight::route('GET /cars/home', function () {
 Flight::route('GET /cars/testdrive', function () {
     Flight::json(Flight::carService()->queryWithoutParams(
         "SELECT brand, model, year, serial_number
-         FROM cars 
+         FROM cars c
          JOIN car_ads ca ON ca.ad_id=c.car_ad_fk
          WHERE ca.status = 'AVAILABLE';"
     ));
