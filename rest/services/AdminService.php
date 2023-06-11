@@ -27,7 +27,7 @@ class AdminService extends BaseService
             throw new Exception("Invalid credidentials", 400);
         }
         unset($db_user['password']);
-        $jwt = JWT::encode($db_user, JWT_SECRET, 'HS256');
+        $jwt = JWT::encode($db_user, getenv('JWT_SECRET'), 'HS256');
         return Flight::json(['token' => $jwt]);
     }
 }

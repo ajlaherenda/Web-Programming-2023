@@ -27,8 +27,8 @@ class EMailer
             $mail->isSMTP();                                             //Send using SMTP
             $mail->Host       = gethostbyname('smtp.mailgun.com');       //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                    //Enable SMTP authentication
-            $mail->Username   = SMTP_USERNAME;                           //SMTP username FROM CONFIG
-            $mail->Password   = SMTP_PASSWORD;                           //SMTP password FROM CONFIG
+            $mail->Username   = getenv('SMTP_USERNAME');                           //SMTP username FROM CONFIG
+            $mail->Password   = getenv('SMTP_PASSWORD');                           //SMTP password FROM CONFIG
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;          //Enable implicit TLS encryption
             $mail->Port       = 587;
             $mail->SMTPOptions = array(

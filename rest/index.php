@@ -33,7 +33,7 @@ Flight::route('/*', function () {
             return false;
         } else {
             try {
-                $decoded = (array)JWT::decode($headers['Authorization'], new Key(JWT_SECRET, 'HS256'));
+                $decoded = (array)JWT::decode($headers['Authorization'], new Key(getenv('JWT_SECRET'), 'HS256'));
                 return true;
             } catch (\Exception $e) {
                 Flight::json(["message" => "Token authorization invalid"], 403);
