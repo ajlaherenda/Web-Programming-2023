@@ -400,7 +400,7 @@ var CarService = {
         for (let i = 0; i < data.length; i++) {
           html += `
             <div>
-            <option>` + data[i].brand + ` ` + data[i].model + ` ` + data[i].year + ` Serial number: ` + data[i].serial_number + `</option>
+            <option>` + data[i].brand + ` ` + data[i].model + ` ` + data[i].year + ` Serial number: ` + data[i].serial_number + ` in ` + data[i].location_name + `</option>
             </div>`;
         }
         $("#vehicle").html(html);
