@@ -81,6 +81,17 @@ class CarDao extends BaseDao
         $stmt->bindParam(':id', $id); // SQL injection prevention
         $stmt->execute();
     }
+    public function getCarLocation($id)
+    {
+        $query = "SELECT l.location_name
+        FROM cars c
+        JOIN locations l ON c.location_fk=l.location_id
+        WHERE c.car_id=:id";
+        $stmt->$this->conn->prepare($query);
+        $stmt->$execute(['id' => $id]);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return reset($result);
+    }
     // methods for Unit testing
     public function getTableName()
     {
