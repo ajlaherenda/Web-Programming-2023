@@ -5,7 +5,7 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
-require_once __DIR__ . '/../Config.class.php';
+//require_once __DIR__ . '/../Config.class.php';
 
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function
@@ -27,8 +27,8 @@ class EMailer
             $mail->isSMTP();                                             //Send using SMTP
             $mail->Host       = gethostbyname('smtp.mailgun.com');       //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                    //Enable SMTP authentication
-            $mail->Username   = Config::SMTP_USERNAME();                           //SMTP username FROM CONFIG
-            $mail->Password   = Config::SMTP_PASSWORD();                           //SMTP password FROM CONFIG
+            $mail->Username   = SMTP_USERNAME;                           //SMTP username FROM CONFIG
+            $mail->Password   = SMTP_PASSWORD;                           //SMTP password FROM CONFIG
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;          //Enable implicit TLS encryption
             $mail->Port       = 587;
             $mail->SMTPOptions = array(

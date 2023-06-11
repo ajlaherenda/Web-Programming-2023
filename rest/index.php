@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 
-require __DIR__ . '/Config.class.php';
+//require __DIR__ . '/Config.class.php';
 require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/services/BaseService.php';
 require __DIR__ . '/services/CarService.php';
@@ -33,7 +33,7 @@ Flight::route('/*', function () {
             return false;
         } else {
             try {
-                $decoded = (array)JWT::decode($headers['Authorization'], new Key(Config::JWT_SECRET(), 'HS256'));
+                $decoded = (array)JWT::decode($headers['Authorization'], new Key(JWT_SECRET, 'HS256'));
                 return true;
             } catch (\Exception $e) {
                 Flight::json(["message" => "Token authorization invalid"], 403);

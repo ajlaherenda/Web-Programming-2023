@@ -1,7 +1,7 @@
 <?php
 
 require_once 'BaseService.php';
-require_once __DIR__ . '/../Config.class.php';
+//require_once __DIR__ . '/../Config.class.php';
 require_once __DIR__ . "/../dao/AdminDao.class.php";
 
 use Firebase\JWT\JWT;
@@ -27,7 +27,7 @@ class AdminService extends BaseService
             throw new Exception("Invalid credidentials", 400);
         }
         unset($db_user['password']);
-        $jwt = JWT::encode($db_user, Config::JWT_SECRET(), 'HS256');
+        $jwt = JWT::encode($db_user, JWT_SECRET, 'HS256');
         return Flight::json(['token' => $jwt]);
     }
 }
