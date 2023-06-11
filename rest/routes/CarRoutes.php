@@ -38,7 +38,7 @@ Flight::route('GET /cars/testdrive', function () {
         "SELECT brand, model, year, serial_number
          FROM cars c
          JOIN car_ads ca ON ca.ad_id=c.car_ad_fk
-         WHERE ca.status = 'AVAILABLE';"
+         WHERE ca.status = 'AVAILABLE' OR ca.status = 'SALE';"
     ));
 });
 
