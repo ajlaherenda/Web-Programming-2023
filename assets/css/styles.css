@@ -1,7 +1,7 @@
     p {
       font: "Times New Roman", Times, serif;
     }
-
+    /* did not use eventually */
     /* Add custom CSS if needed */
     .sidebar {
       padding: 20px;
@@ -17,8 +17,18 @@
       background-image: url('../images/pocetna.png');
       background-repeat: no-repeat;
       background-attachment: fixed;
+      
+      background-position: center;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      height: 100%;
+      overflow: hidden;
+
+      /*
       min-height:100vh;
-      background-size: 100% 100%;
+      background-size: 100% 100%; */
     }
 
     #aboutUs {
