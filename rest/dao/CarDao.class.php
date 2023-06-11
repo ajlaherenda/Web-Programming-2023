@@ -33,7 +33,7 @@ class CarDao extends BaseDao
         $stmt = $this->conn->prepare("SELECT * FROM cars WHERE car_id = :id");
         $stmt->execute(['id' => $id]);
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        return $result;
+        return reset($result);
     }
     public function getCarsByLocation($id)
     {
