@@ -84,7 +84,7 @@ var SinglePageService = {
     $("#container-sale").addClass("d-none");
     $("#container-search-results").addClass("d-none");
     $("#bottom-nav").addClass("d-none");
-    $("#login-button").addClass("d-none");
+    $("#login-btn").addClass("d-none");
     $("#container-test-drive").addClass("d-none");
     $("#search").removeClass("d-none");
     $("#container-admin-login").removeClass("d-none");
