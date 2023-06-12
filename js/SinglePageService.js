@@ -6,6 +6,7 @@ var SinglePageService = {
     $("#container-incoming").addClass("d-none");
     $("#container-sale").addClass("d-none");
     $("#bottom-nav").addClass("d-none");
+    $("#container-search-results").addClass("d-none");
     $("#container-test-drive").addClass("d-none");
     $("#container-admin-login").addClass("d-none"); 
     $("#aboutUs").removeClass("d-none");
@@ -18,6 +19,7 @@ var SinglePageService = {
     $("#container-incoming").addClass("d-none");
     $("#container-sale").addClass("d-none");
     $("#container-test-drive").addClass("d-none");
+    $("#container-search-results").addClass("d-none");
     $("#bottom-nav").addClass("d-none");
     $("#container-admin-login").addClass("d-none");
     $("#container-available").removeClass("d-none");
@@ -30,6 +32,7 @@ var SinglePageService = {
     $("#container-available").addClass("d-none");
     $("#container-sale").addClass("d-none");
     $("#container-test-drive").addClass("d-none");
+    $("#container-search-results").addClass("d-none");
     $("#bottom-nav").addClass("d-none");
     $("#container-admin-login").addClass("d-none");
     $("#container-incoming").removeClass("d-none");
@@ -40,6 +43,7 @@ var SinglePageService = {
     $("#aboutUs").addClass("d-none");
     $("#container-home").addClass("d-none");
     $("#container-available").addClass("d-none");
+    $("#container-search-results").addClass("d-none");
     $("#bottom-nav").addClass("d-none");
     $("#container-incoming").addClass("d-none");
     $("#container-test-drive").addClass("d-none");
@@ -80,6 +84,7 @@ var SinglePageService = {
     $("#container-sale").addClass("d-none");
     $("#container-search-results").addClass("d-none");
     $("#bottom-nav").addClass("d-none");
+    $("#login-button").addClass("d-none");
     $("#container-test-drive").addClass("d-none");
     $("#search").removeClass("d-none");
     $("#container-admin-login").removeClass("d-none");
