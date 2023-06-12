@@ -27,7 +27,7 @@ The project makes use of 2 design patterns:
 
 JUnit tests can be found in the <tests> folder
 + We aimed to test the database connectivity, result sets and constrainst, that were put on the business and database logic.
-+ #11 tests in total
++ #13 tests in total
 + tests are run through the terminal $ ./vendor/bin/phpunit --verbose tests
 + any method that is tested with the assertCount() and utilises DAO functions who return reset($result), have been while testing modified to return $result only, due to the nature of theirs
 + or $ ./vendor/bin/phpunit --verbose tests/PhpFileName.php
