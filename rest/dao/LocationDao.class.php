@@ -57,4 +57,9 @@ class LocationDao extends BaseDao
         $stmt->execute($entity);
         return $entity;
     }
+    // methods for Unit testing
+    public function getTableName()
+    {
+        return $this->table_name;
+    }
 }

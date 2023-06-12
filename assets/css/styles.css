@@ -17,9 +17,10 @@
       background-image: url('../images/pocetna.png');
       background-repeat: no-repeat;
       background-attachment: fixed;
+      background-size: cover;
+      object-fit: fill;
       background-position: center;
       min-height:100vh;
-      background-size: 100% 100%;
     }
 
     #aboutUs {
