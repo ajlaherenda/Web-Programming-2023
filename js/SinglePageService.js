@@ -94,11 +94,11 @@ var SinglePageService = {
     if (localStorage.getItem('token') == null) {
       $("#sign-out-btn-container").addClass("d-none");
       $(".div-for-update-del").addClass("d-none"); 
-      $("#login-btn").addClass("d-none");
+      $("#login-btn").removeClass("d-none");
     } else {
       $("#sign-out-btn-container").removeClass("d-none");
       $(".div-for-update-del").removeClass("d-none");
-      $("#login-btn").removeClass("d-none");
+      $("#login-btn").addClass("d-none");
     }     
   }
 }
