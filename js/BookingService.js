@@ -26,12 +26,10 @@ var BookingService = {
       rules: {
         name: {
           required: true,
-          digits: false,
           minlength: 2
         },
         surname: {
           required: true,
-          digits: false,
           minlength: 2
         },
         email: {
@@ -56,12 +54,10 @@ var BookingService = {
       messages: {
         name: {
           required: "Please enter your name",
-          digits: "Digits are not allowed in name field.",
           minlength: "Name must be at least 2 characters long"
         },
         surname: {
           required: "Please enter your surname",
-          digits: "Digits are not allowed in surname field.",
           minlength: "Surname must be at least 2 characters long"
         },
         email: {
