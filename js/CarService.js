@@ -166,7 +166,7 @@ var CarService = {
                   </div>
                   <div class="modal-footer">
                     <button class ="btn"><i class="fa fa-check" onclick="AdService.deleteCarAd(` + data[i].car_id + `);" style="font-size:48px;color:rgb(152,251,152)"></i></button>
-                    <button class="btn"><i class="fa fa-close" style="font-size:48px;color:red"></i></button>
+                    <button class="btn"><i class="fa fa-close" data-bs-dismiss="modal" style="font-size:48px;color:red"></i></button>
                   </div>
                 </div>
               </div>
@@ -265,7 +265,7 @@ var CarService = {
                   </div>
                   <div class="modal-footer">
                     <button class ="btn"><i class="fa fa-check" onclick="AdService.deleteCarAd(` + data[i].car_id + `);" style="font-size:48px;color:rgb(152,251,152)"></i></button>
-                    <button class="btn"><i class="fa fa-close" style="font-size:48px;color:red"></i></button>
+                    <button class="btn"><i class="fa fa-close" data-bs-dismiss="modal" style="font-size:48px;color:red"></i></button>
                   </div>
                 </div>
               </div>
@@ -364,7 +364,7 @@ var CarService = {
                   </div>
                   <div class="modal-footer">
                     <button class ="btn"><i class="fa fa-check" onclick="AdService.deleteCarAd(` + data[i].car_id + `);" style="font-size:48px;color:rgb(152,251,152)"></i></button>
-                    <button class="btn"><i class="fa fa-close" style="font-size:48px;color:red"></i></button>
+                    <button class="btn"><i class="fa fa-close" data-bs-dismiss="modal" style="font-size:48px;color:red"></i></button>
                   </div>
                 </div>
               </div>
@@ -484,7 +484,7 @@ var CarService = {
                     </div>
                     <div class="modal-footer">
                       <button class ="btn"><i class="fa fa-check" onclick="AdService.deleteCarAd(` + data[i].car_id + `);" style="font-size:48px;color:rgb(152,251,152)"></i></button>
-                      <button class="btn"><i class="fa fa-close" style="font-size:48px;color:red"></i></button>
+                      <button class="btn"><i class="fa fa-close" data-bs-dismiss="modal" style="font-size:48px;color:red"></i></button>
                     </div>
                   </div>
                 </div>
